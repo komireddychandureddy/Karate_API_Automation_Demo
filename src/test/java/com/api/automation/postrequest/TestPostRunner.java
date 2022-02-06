@@ -15,7 +15,7 @@ public class TestPostRunner {
 	  
  @Test public Karate runTest() {
 		  
-		  return Karate.run( "fileupload").relativeTo(getClass());
+		  return Karate.run( "fileupload","datadriven").relativeTo(getClass());
 		  
 		  }
  /*
