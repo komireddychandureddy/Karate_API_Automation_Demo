@@ -21,7 +21,12 @@
             <artifactId>karate-junit5</artifactId>
             <version>${karate.version}</version>
             <scope>test</scope>
-        </dependency>		
+        </dependency>	
+        	<dependency>
+    <groupId>net.masterthought</groupId>
+    <artifactId>cucumber-reporting</artifactId>
+    <version>5.4.0</version>
+</dependency>
     </dependencies>
 
     <build>
@@ -50,6 +55,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
                 <configuration>
+                <includes>
+                <include>**/ParallelBuilder.java</include>
+                </includes>
+                <rerunFailingTestsCount>2</rerunFailingTestsCount>
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                 </configuration>
             </plugin>          

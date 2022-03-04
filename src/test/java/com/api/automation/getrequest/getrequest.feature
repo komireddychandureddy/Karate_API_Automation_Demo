@@ -5,6 +5,7 @@ Background: Setup the Base URL
  Given url 'http://localhost:9897/'
  And print '**********Test*********'
 
+@Regression @Smoke
 Scenario: To get the all the data from application in the JSON format
 #Given url 'http://localhost:9897/normal/webapi/all'
 And path '/normal/webapi/all'
@@ -38,6 +39,7 @@ And match response ==
 ]
 """
 
+@Ignore
 Scenario: To get the all the data from application in the XML format
 #Given url 'http://localhost:9897/normal/webapi/all'
 And path '/normal/webapi/all'
@@ -71,7 +73,7 @@ And match response ==
 </List>
 
 """
-
+@Smoke
 Scenario: To get the all the data from application in the XML format with negate
 #Given url 'http://localhost:9897/normal/webapi/all'
 And path '/normal/webapi/all'
@@ -104,6 +106,7 @@ And match response !=
   </item>
 </List>
 """
+@Regression
 Scenario: To get the all the data from application in the JSON format with specific property
 #Given url 'http://localhost:9897/normal/webapi/all'
 And path '/normal/webapi/all'
@@ -131,7 +134,7 @@ And match response.[0].project[0].technology[*] contains ["Kotlin", "SQL Lite", 
 And match response.[*].jobId contains 1
 
 
-
+@Regression
 Scenario: To get the all the data from application in the XML format with validations
 #Given url 'http://localhost:9897/normal/webapi/all'
 And path '/normal/webapi/all'
@@ -148,7 +151,7 @@ And match /List/item/experience/experience[1] == 'Google'
 # index starts from 1 for XML and 0 for JSON
 And match response.List.item.experience.experience[0] == 'Google'
 
-
+@Regression
 Scenario: To get the all the data from application in the JSON format with fuzzy matcher
 #Given url 'http://localhost:9897/normal/webapi/all'
 And path '/normal/webapi/all'
@@ -175,7 +178,7 @@ And match response.[0].experience == '#[3]'
 And match response.[0].experience == '#[3] #string'
 And match response.[0].experience == '#[3] #string? _.length >=2'
 
-
+@Regression
 Scenario: To get the all the data from application in the XML format with fuzzy matcher validations
 #Given url 'http://localhost:9897/normal/webapi/all'
 And path '/normal/webapi/all'
