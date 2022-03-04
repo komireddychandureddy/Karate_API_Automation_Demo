@@ -5,6 +5,7 @@ Feature: To test the patch request
     Given url 'http://localhost:9897/'
     And print '**********Test*********'
 
+@Ignore
   Scenario: To update job description for the newly created job entry
     # To create job entry
     # <Gherkin keyword> <call> <read(path of feature file) {key:value1,key2:value2}>

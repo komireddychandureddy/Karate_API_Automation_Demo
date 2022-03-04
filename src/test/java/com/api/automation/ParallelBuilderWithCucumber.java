@@ -1,10 +1,8 @@
 package com.api.automation;
 
 import java.io.File;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -16,8 +14,6 @@ import com.intuit.karate.Runner.Builder;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
 import net.masterthought.cucumber.Reportable;
-import net.masterthought.cucumber.json.support.Status;
-import net.masterthought.cucumber.presentation.PresentationMode;
 
 
 
@@ -31,7 +27,7 @@ public class ParallelBuilderWithCucumber {
 
 		Results result = runner.parallel(5);
 
-		  //For old version 1.1.0
+		//For old version 1.1.0
 		  /*   
 		  System.out.println("getFeaturesTotal : "+ result.getFeaturesTotal());
 		  System.out.println("getScenarios: "+ result.getScenariosTotal());
@@ -47,7 +43,7 @@ public class ParallelBuilderWithCucumber {
 			 
 		  
 		System.out.println("getFailCount : "+ result.getFailCount());
-		
+
 		generateCucumberReport(result.getReportDir());
 	}
 

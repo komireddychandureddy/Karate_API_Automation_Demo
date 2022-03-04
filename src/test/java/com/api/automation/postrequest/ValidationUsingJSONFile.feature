@@ -11,7 +11,7 @@ And path '/normal/webapi/all'
 And header Accept = 'application/json'
 When method get
 Then status 200
-* def actualResponse = read("JsonResponse.json")
+* def actualResponse = read("JsonPost.json")
 And match response == actualResponse
 And print "File ==>", actualResponse
 
