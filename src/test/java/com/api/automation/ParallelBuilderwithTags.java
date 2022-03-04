@@ -11,7 +11,7 @@ public class ParallelBuilderwithTags {
 
 	 @Test 
 	 public void parallelTest() {
-		  Builder<?> runner = new Builder();
+		  Builder runner = new Builder();
 		  //runner.path("classpath:com/api/automation/putrequest");
 		  runner.path("classpath:com/api/automation");
 		  runner.tags("~@Ignore","@Regression");
@@ -21,10 +21,23 @@ public class ParallelBuilderwithTags {
 		
 		  Results result = runner.parallel(5);
 		  
+		//For old version 1.1.0
+		  /*   
 		  System.out.println("getFeaturesTotal : "+ result.getFeaturesTotal());
-		  System.out.println("getScenariosPassed : "+ result.getScenariosPassed());
-		  System.out.println("getScenariosFailed : "+ result.getScenariosFailed());
-		  System.out.println("getFailCount : "+ result.getFailCount());
+		  System.out.println("getScenarios: "+ result.getScenariosTotal());
+		  System.out.println("getScenariospassCount: "+ result.getScenariosPassed());
+		  
+		  System.out.println("getScenariosFailCount: "+ result.getScenariosFailed());  
+			 */
+		  //For old version 0.9.6
+		   
+			  System.out.println("getFeaturesTotal : "+ result.getFeatureCount());
+			  System.out.println("getScenarios: "+ result.getScenarioCount());
+			  System.out.println("getpassCount: "+ result.getPassCount());
+			 
+		  
+		System.out.println("getFailCount : "+ result.getFailCount());
 		  }
+		
 		 
 }
