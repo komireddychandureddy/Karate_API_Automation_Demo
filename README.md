@@ -13,3 +13,7 @@ java  -jar -Dserver.port=9897 jobportal-0.0.1-SNAPSHOT.jar
 
 Goto command prompt or terminal and hit
 mvn clean install test
+
+#Source
+1. Rahol rathore (https://github.com/rahulrathore44/KarateFrameworkTutorial)
+2. https://jobapplicationjwt.herokuapp.com/swagger-ui.html#/
